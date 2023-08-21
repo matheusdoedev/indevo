@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.matheusdoedev.indevo.api.dto.UserDto;
 import com.matheusdoedev.indevo.api.model.User;
-import com.matheusdoedev.indevo.api.service.UserService;
+import com.matheusdoedev.indevo.api.service.impl.UserServiceImpl;
 
 import lombok.AllArgsConstructor;
 
@@ -17,13 +17,12 @@ import lombok.AllArgsConstructor;
 @RequestMapping("/api/v1")
 public class AuthController {
 
-	private final UserService userService;
+	private final UserServiceImpl userService;
 
 	@PostMapping("/signup")
-	public ResponseEntity<UserDto> postSignUp(@RequestBody UserDto user) {
+	public UserDto postSignUp(@RequestBody UserDto user) {
 		this.userService.createUser(user);
 
-		return ResponseEntity.created(user);
-	
+		return user;
 	}
 }

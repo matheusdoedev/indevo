@@ -1,19 +1,14 @@
 package com.matheusdoedev.indevo.api.service;
 
-import org.springframework.stereotype.Service;
+import java.util.List;
+import java.util.UUID;
 
-import com.matheusdoedev.indevo.api.model.User;
-import com.matheusdoedev.indevo.api.repository.UserRepository;
+import com.matheusdoedev.indevo.api.dto.UserDto;
 
-import lombok.AllArgsConstructor;
+public interface UserService {
+	public UserDto createUser(UserDto userDto);
 
-@Service
-@AllArgsConstructor
-public class UserService {
+	public List<UserDto> listUsers();
 
-	private final UserRepository userRepository;
-
-	public User createUser(User user) {
-		return this.userRepository.save(user);
-	}
+	public UserDto showUser(UUID userId);
 }
