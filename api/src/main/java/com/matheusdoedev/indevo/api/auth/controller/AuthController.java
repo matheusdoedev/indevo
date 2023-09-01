@@ -1,4 +1,4 @@
-package com.matheusdoedev.indevo.api.controller;
+package com.matheusdoedev.indevo.api.auth.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -6,9 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.matheusdoedev.indevo.api.dto.UserDto;
-import com.matheusdoedev.indevo.api.model.User;
-import com.matheusdoedev.indevo.api.service.impl.UserServiceImpl;
+import com.matheusdoedev.indevo.api.user.dto.UserDto;
+import com.matheusdoedev.indevo.api.user.service.impl.UserServiceImpl;
 
 import lombok.AllArgsConstructor;
 
@@ -20,9 +19,9 @@ public class AuthController {
 	private final UserServiceImpl userService;
 
 	@PostMapping("/signup")
-	public UserDto postSignUp(@RequestBody UserDto user) {
-		this.userService.createUser(user);
+	public ResponseEntity<UserDto> postSignUp(@RequestBody UserDto userDto) {
+		UserDto createdUserDto = this.userService.createUser(userDto);
 
-		return user;
+		return ResponseEntity.ok(createdUserDto);
 	}
 }

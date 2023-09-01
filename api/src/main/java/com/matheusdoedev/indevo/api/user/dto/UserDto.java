@@ -1,5 +1,6 @@
-package com.matheusdoedev.indevo.api.dto;
+package com.matheusdoedev.indevo.api.user.dto;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 import lombok.AllArgsConstructor;
@@ -14,4 +15,6 @@ public class UserDto {
 	private String lastName;
 	private String email;
 	private String password;
+	private LocalDateTime createdAt;
+	private LocalDateTime updatedAt;
 }

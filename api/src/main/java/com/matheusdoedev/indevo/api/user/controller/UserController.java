@@ -1,4 +1,4 @@
-package com.matheusdoedev.indevo.api.controller;
+package com.matheusdoedev.indevo.api.user.controller;
 
 import java.util.List;
 import java.util.UUID;
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.matheusdoedev.indevo.api.dto.UserDto;
-import com.matheusdoedev.indevo.api.service.impl.UserServiceImpl;
+import com.matheusdoedev.indevo.api.user.dto.UserDto;
+import com.matheusdoedev.indevo.api.user.service.impl.UserServiceImpl;
 
 import lombok.AllArgsConstructor;
 

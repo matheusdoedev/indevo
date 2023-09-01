@@ -1,11 +1,11 @@
-package com.matheusdoedev.indevo.api.repository;
+package com.matheusdoedev.indevo.api.user.repository;
 
 import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.matheusdoedev.indevo.api.model.User;
+import com.matheusdoedev.indevo.api.user.model.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, UUID> {

@@ -1,13 +1,14 @@
-package com.matheusdoedev.indevo.api.mapper;
+package com.matheusdoedev.indevo.api.user.mapper;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
-import com.matheusdoedev.indevo.api.dto.UserDto;
-import com.matheusdoedev.indevo.api.model.User;
+import com.matheusdoedev.indevo.api.user.dto.UserDto;
+import com.matheusdoedev.indevo.api.user.model.User;
 
 public class UserMapper {
+	private UserMapper() {
+	}
 
 	public static UserDto parseToUserDto(User user) {
 		return new UserDto(
@@ -15,7 +16,9 @@ public class UserMapper {
 				user.getFirstName(),
 				user.getLastName(),
 				user.getEmail(),
-				user.getPassword());
+				user.getPassword(),
+				user.getCreatedAt(),
+				user.getUpdatedAt());
 	}
 
 	public static User parseToUserEntity(UserDto userDto) {
@@ -24,7 +27,9 @@ public class UserMapper {
 				userDto.getFirstName(),
 				userDto.getLastName(),
 				userDto.getEmail(),
-				userDto.getPassword());
+				userDto.getPassword(),
+				userDto.getCreatedAt(),
+				userDto.getUpdatedAt());
 	}
 
 	public static List<UserDto> parseToUsersDtoList(List<User> users) {

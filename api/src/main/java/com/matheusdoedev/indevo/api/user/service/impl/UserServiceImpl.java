@@ -1,4 +1,4 @@
-package com.matheusdoedev.indevo.api.service.impl;
+package com.matheusdoedev.indevo.api.user.service.impl;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,11 +6,12 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
-import com.matheusdoedev.indevo.api.dto.UserDto;
-import com.matheusdoedev.indevo.api.mapper.UserMapper;
-import com.matheusdoedev.indevo.api.model.User;
-import com.matheusdoedev.indevo.api.repository.UserRepository;
-import com.matheusdoedev.indevo.api.service.UserService;
+import com.matheusdoedev.indevo.api.common.service.BCryptPasswordEncoderService;
+import com.matheusdoedev.indevo.api.user.dto.UserDto;
+import com.matheusdoedev.indevo.api.user.mapper.UserMapper;
+import com.matheusdoedev.indevo.api.user.model.User;
+import com.matheusdoedev.indevo.api.user.repository.UserRepository;
+import com.matheusdoedev.indevo.api.user.service.UserService;
 
 import lombok.AllArgsConstructor;
 
@@ -19,14 +20,18 @@ import lombok.AllArgsConstructor;
 public class UserServiceImpl implements UserService {
 
 	private final UserRepository userRepository;
+	private final BCryptPasswordEncoderService bCryptPasswordEncoderService;
 
 	public UserDto createUser(UserDto userDto) {
-		userDto.setId(UUID.randomUUID());
+		String encryptedPassword = bCryptPasswordEncoderService.getBcrypt().encode(userDto.getPassword());
+		UUID userId = UUID.randomUUID();
+
+		userDto.setId(userId);
+		userDto.setPassword(encryptedPassword);
 
 		User user = UserMapper.parseToUserEntity(userDto);
 
 		this.userRepository.save(user);
-
 		return userDto;
 	}
 
