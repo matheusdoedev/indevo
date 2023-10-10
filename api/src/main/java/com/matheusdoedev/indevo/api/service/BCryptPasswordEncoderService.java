@@ -1,4 +1,4 @@
-package com.matheusdoedev.indevo.api.common.service;
+package com.matheusdoedev.indevo.api.service;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.matheusdoedev.indevo.api.common.controller;
+package com.matheusdoedev.indevo.api.controller;
 
 import java.util.Date;
 
