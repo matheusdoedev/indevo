@@ -1,4 +1,4 @@
-package com.matheusdoedev.indevo.api.domain.user;
+package com.matheusdoedev.indevo.api.domain.user.enums;
 
 public enum UserRole {
 	ADMIN("admin"),

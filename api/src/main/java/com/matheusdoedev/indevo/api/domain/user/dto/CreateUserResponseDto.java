@@ -1,6 +1,4 @@
-package com.matheusdoedev.indevo.api.domain.user;
-
-import java.util.UUID;
+package com.matheusdoedev.indevo.api.domain.user.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,9 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDto {
-
-	private UUID id;
+public class CreateUserResponseDto {
 
 	private String firstName;
 
@@ -20,10 +16,4 @@ public class UserDto {
 	private String email;
 
 	private String username;
-
-	private String password;
-
-	private UserRole role;
-
-	private Boolean hasAcceptedUseTerms;
 }
