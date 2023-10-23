@@ -14,10 +14,10 @@ services:
     volumes:
       - ./db-dump/:/docker-entrypoint-initdb.d
 
-  api:
-    build: .
-    ports:
-      - "8080:8080"
-    command: java -jar target/api-v1.0.0.jar
-    depends_on:
-      - db
+  # api:
+  #   build: .
+  #   ports:
+  #     - "8080:8080"
+  #   command: java -jar target/api-v1.0.0.jar
+  #   depends_on:
+  #     - db
