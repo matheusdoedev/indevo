@@ -43,7 +43,7 @@ public class User implements UserDetails {
 	@Column(length = 50, nullable = false)
 	private String username;
 
-	@Column(length = 50, nullable = false)
+	@Column(length = 250, nullable = false)
 	private String password;
 
 	@Column(nullable = false)
@@ -54,9 +54,6 @@ public class User implements UserDetails {
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		if (this.role == UserRole.ADMIN)
-			return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
-
 		return List.of(new SimpleGrantedAuthority("ROLE_USER"));
 	}
 

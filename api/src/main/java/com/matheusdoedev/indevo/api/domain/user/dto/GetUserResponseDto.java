@@ -2,8 +2,6 @@ package com.matheusdoedev.indevo.api.domain.user.dto;
 
 import java.util.UUID;
 
-import com.matheusdoedev.indevo.api.domain.user.enums.UserRole;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,9 +9,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDto {
+public class GetUserResponseDto {
 
-	private UUID id;
+	private UUID userId;
 
 	private String firstName;
 
@@ -22,10 +20,4 @@ public class UserDto {
 	private String email;
 
 	private String username;
-
-	private String password;
-
-	private UserRole role;
-
-	private Boolean hasAcceptedUseTerms;
 }

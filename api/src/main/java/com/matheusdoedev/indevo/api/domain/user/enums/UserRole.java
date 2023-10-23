@@ -1,7 +1,6 @@
 package com.matheusdoedev.indevo.api.domain.user.enums;
 
 public enum UserRole {
-	ADMIN("admin"),
 	USER("user");
 
 	private String role;

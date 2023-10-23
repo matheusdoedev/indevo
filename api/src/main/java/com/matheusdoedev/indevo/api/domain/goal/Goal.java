@@ -2,7 +2,9 @@ package com.matheusdoedev.indevo.api.domain.goal;
 
 import java.util.UUID;
 
-import com.matheusdoedev.indevo.api.domain.developmentPlan.DevelopmentPlan;
+import com.matheusdoedev.indevo.api.domain.development_plan.DevelopmentPlan;
+import com.matheusdoedev.indevo.api.domain.goal.enums.GoalStatus;
+import com.matheusdoedev.indevo.api.domain.user.User;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -37,6 +39,9 @@ public class Goal {
 
 	@Column(nullable = false)
 	private GoalStatus status;
+
+	@ManyToOne
+	private User user;
 
 	@ManyToOne
 	private DevelopmentPlan developmentPlan;

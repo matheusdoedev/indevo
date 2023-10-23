@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.matheusdoedev.indevo.api.domain.auth.AuthenticationDto;
+import com.matheusdoedev.indevo.api.domain.user.dto.GetUserResponseDto;
+import com.matheusdoedev.indevo.api.domain.user.dto.CreateUserDto;
 import com.matheusdoedev.indevo.api.domain.user.dto.CreateUserResponseDto;
-import com.matheusdoedev.indevo.api.domain.user.dto.UserDto;
 import com.matheusdoedev.indevo.api.service.impl.UserServiceImpl;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -30,18 +31,20 @@ public class AuthController {
 	private final UserServiceImpl userService;
 
 	@PostMapping("/login")
-	public ResponseEntity<String> login(@RequestBody @Valid AuthenticationDto authenticationDto) {
+	public ResponseEntity<GetUserResponseDto> login(@RequestBody @Valid AuthenticationDto authenticationDto) {
 		UsernamePasswordAuthenticationToken usernamePassword = new UsernamePasswordAuthenticationToken(
 				authenticationDto.getUsername(),
 				authenticationDto.getPassword());
 
 		this.authenticationManager.authenticate(usernamePassword);
 
-		return ResponseEntity.ok().build();
+		GetUserResponseDto userLogged = this.userService.getUserByUsername(authenticationDto.getUsername());
+
+		return ResponseEntity.ok(userLogged);
 	}
 
 	@PostMapping("/register")
-	public ResponseEntity<CreateUserResponseDto> register(@RequestBody @Valid UserDto userDto) {
+	public ResponseEntity<CreateUserResponseDto> register(@RequestBody @Valid CreateUserDto userDto) {
 		CreateUserResponseDto createdUser = this.userService.createUser(userDto);
 
 		return ResponseEntity.ok(createdUser);

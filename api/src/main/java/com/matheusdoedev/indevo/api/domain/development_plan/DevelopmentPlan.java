@@ -1,8 +1,8 @@
-package com.matheusdoedev.indevo.api.domain.developmentPlan;
+package com.matheusdoedev.indevo.api.domain.development_plan;
 
 import java.util.UUID;
 
-import com.matheusdoedev.indevo.api.domain.goal.Goal;
+import com.matheusdoedev.indevo.api.domain.development_plan.enums.PlanStatus;
 import com.matheusdoedev.indevo.api.domain.user.User;
 
 import jakarta.persistence.Column;
@@ -11,7 +11,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -42,7 +41,4 @@ public class DevelopmentPlan {
 
 	@ManyToOne
 	private User user;
-
-	@OneToMany
-	private Goal goal;
 }
