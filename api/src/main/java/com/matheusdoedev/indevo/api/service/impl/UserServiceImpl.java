@@ -2,13 +2,11 @@ package com.matheusdoedev.indevo.api.service.impl;
 
 import java.util.UUID;
 
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.matheusdoedev.indevo.api.domain.user.User;
 import com.matheusdoedev.indevo.api.domain.user.enums.UserRole;
 import com.matheusdoedev.indevo.api.domain.user.dto.CreateUserResponseDto;
-import com.matheusdoedev.indevo.api.domain.user.dto.GetUserResponseDto;
 import com.matheusdoedev.indevo.api.domain.user.dto.CreateUserDto;
 import com.matheusdoedev.indevo.api.domain.user.mapper.UserMapper;
 import com.matheusdoedev.indevo.api.exception.UserWithThisResourceAlreadyExists;
@@ -40,15 +38,5 @@ public class UserServiceImpl implements UserService {
 		this.repository.save(newUser);
 
 		return UserMapper.parseToCreateUserResponseDto(userDto);
-	}
-
-	public GetUserResponseDto getUserByUsername(String username) {
-		if (this.repository.findByUsername(username) == null) {
-			throw new UsernameNotFoundException(username, null);
-		}
-
-		User user = this.repository.findByUsername(username);
-
-		return UserMapper.parseFromUserToGetUserResponseDto(user);
 	}
 }

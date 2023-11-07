@@ -5,7 +5,5 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-RUN ./mvnw clean package
-
 EXPOSE 8080
 CMD [ "java", "-jar", "target/api-v1.0.0.jar" ]

@@ -1,4 +1,4 @@
-package com.matheusdoedev.indevo.api.config;
+package com.matheusdoedev.indevo.api.domain.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,10 +11,16 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import lombok.AllArgsConstructor;
 
 @Configuration
 @EnableWebSecurity
+@AllArgsConstructor
 public class SecurityConfig {
+
+	private final SecurityFilter securityFilter;
 
 	private static final String[] AUTH_WHITELIST = {
 			"/v2/api-docs",
@@ -41,6 +47,7 @@ public class SecurityConfig {
 						.requestMatchers(HttpMethod.GET, "").permitAll()
 						.requestMatchers(AUTH_WHITELIST).permitAll()
 						.anyRequest().authenticated())
+				.addFilterBefore(this.securityFilter, UsernamePasswordAuthenticationFilter.class)
 				.build();
 	}
 
