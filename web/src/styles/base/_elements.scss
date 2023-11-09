@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: $terciary-600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $primary-font;
+  font-weight: 700;
+  line-height: 1.1em;
+}
+
+p {
+  max-width: 30em;
+}
+
+p,
+a,
+span,
+li {
+  font-family: $secondary-font;
+}
+
+a:hover {
+  color: $primary-500;
+  transition: 0.3s;
+}
+
+img {
+  object-fit: cover;
+}
