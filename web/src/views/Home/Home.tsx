@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { Header } from '@/components'
+import { Footer, Header } from '@/components'
 import { CTA_BUTTON, HOME_NAV_OPTIONS, KEY_FEATURES_CARDS } from '@/constants'
 
 import './Home.styles.scss'
@@ -68,21 +68,14 @@ export default function Home() {
           <h2 className="container cta-section__title">Getting Started</h2>
           <p className="container cta-section__text">
             {' '}
-            Ready to embark on a journey of self-discovery and growth? Create
-            your account in Indevo and get started. Click in the button below to
-            access the app, and explore our user-friendly documentation and
-            tutorials to get started on the right foot.
+            Ready to embark on a journey of self-discovery and growth? Click in
+            the button below and get started.
           </p>
           {CTA_BUTTON}
         </div>
       </section>
 
-      <footer>
-        <p>
-          Indevo 2023 @ Feito e mantido por matheusdoedev. Todos os direitos
-          reservados®
-        </p>
-      </footer>
+      <Footer />
     </div>
   )
 }
