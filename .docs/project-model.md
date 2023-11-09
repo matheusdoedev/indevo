@@ -41,26 +41,3 @@ It is an app where the user can manage his PDI by creation plans, goals, and eve
 ### Development plan
 
 ![Use Case Diagram - Development Plan](./use-cases-diagram-development-plan.png)
-
-## Use Cases
-
-### Authentication
-
-#### IND-001 Create account
-
-- Name: Create account;
-- Main Actor: user;
-- Summary: User creates an account;
-- Post-conditions: User must confirm his e-mail after creating the account;
-- Main flow:
-  1. Click in CTA button on landing page to go to sign up page;
-  2. Show signup form;
-  3. Fullfill all fields with valid data (first_name, last_name, email, confirm_email, password, confirm_password);
-  4. Click in 'Sign Up' button;
-  5. Show a screen telling that a confirmation e-mail was sended;
-  6. Go to Sign In screen.
-- Alternative flow:
-  1. Click in CTA button on landing page to go to sign up page;
-  2. Show signup form;
-  3. Click in 'I already have my account';
-  4. Go to Sign In page.
