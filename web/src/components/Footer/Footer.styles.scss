@@ -25,3 +25,13 @@
     }
   }
 }
+
+@media (max-width: $lg) {
+  .footer {
+    padding: $gutter;
+
+    &__copy {
+      font-size: 12px;
+    }
+  }
+}

@@ -52,6 +52,7 @@ export default function Home() {
         <div className="container key-features__container">
           <div className="key-features__title-container">
             <Image
+              className="key-features__title-container__image"
               src="/assets/images/key-features-title-bg.jpg"
               alt="Key Features"
               width={1360}
