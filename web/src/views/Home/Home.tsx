@@ -1,11 +1,33 @@
+'use client'
+
+import { useEffect } from 'react'
 import Image from 'next/image'
 
-import { Footer, Header } from '@/components'
-import { CTA_BUTTON, HOME_NAV_OPTIONS, KEY_FEATURES_CARDS } from '@/constants'
+import { CTAButton, Footer, Header, KeyFeaturesCard } from '@/components'
+import { HOME_NAV_OPTIONS, KEY_FEATURES_CARDS } from '@/constants'
 
 import './Home.styles.scss'
 
 export default function Home() {
+  useEffect(() => {
+    const internLinks = document.querySelectorAll('a[href^="#"]')
+
+    const scrollToSection = (event: any) => {
+      event.preventDefault()
+      const href = event.currentTarget.getAttribute('href')
+      const section = document.querySelector(href)
+
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+
+    internLinks.forEach((link) => {
+      link.addEventListener('click', scrollToSection)
+    })
+  }, [])
+
   return (
     <div>
       <Header>
@@ -29,7 +51,7 @@ export default function Home() {
               Unlock Your Full Potential with Indevo: Your Ultimate Personal
               Development Planner
             </p>
-            {CTA_BUTTON}
+            <CTAButton />
           </section>
         </div>
       </section>
@@ -60,7 +82,16 @@ export default function Home() {
             />
             <h2 className="key-features__title">Key Features</h2>
           </div>
-          <div className="key-features__list">{KEY_FEATURES_CARDS}</div>
+          <div className="key-features__list">
+            {KEY_FEATURES_CARDS.map(({ title, imgSrc, text }) => (
+              <KeyFeaturesCard
+                key={title}
+                title={title}
+                imgSrc={imgSrc}
+                text={text}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -72,7 +103,7 @@ export default function Home() {
             Ready to embark on a journey of self-discovery and growth? Click in
             the button below and get started.
           </p>
-          {CTA_BUTTON}
+          <CTAButton />
         </div>
       </section>
 

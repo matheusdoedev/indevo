@@ -2,8 +2,7 @@
 
 import { ReactNode, useEffect } from 'react'
 
-import { Logo } from '@/components'
-import { CTA_BUTTON } from '@/constants'
+import { CTAButton, Logo } from '@/components'
 
 import './Header.styles.scss'
 
@@ -39,7 +38,7 @@ export default function Header({ children }: Readonly<HeaderProps>) {
         <Logo />
         <div className="header__content">
           {!!children && children}
-          {CTA_BUTTON}
+          <CTAButton />
         </div>
       </div>
     </header>
