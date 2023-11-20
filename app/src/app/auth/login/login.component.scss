@@ -1,0 +1,18 @@
+@import "../../shared/styles/index.scss";
+
+.login {
+  &__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: $gap-sm;
+    max-width: 442px;
+    width: 100%;
+  }
+
+  &__recover-password-link {
+    color: $terciary-200;
+    text-align: right;
+    text-decoration-line: underline;
+    font-size: 14px;
+  }
+}
