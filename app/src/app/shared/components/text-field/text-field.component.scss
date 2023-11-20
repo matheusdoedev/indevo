@@ -1,0 +1,32 @@
+@import "../../styles/index.scss";
+
+.input {
+  display: flex;
+  flex-direction: column;
+  row-gap: $gap;
+  width: 100%;
+
+  &__label {
+    font-family: $primary-font;
+    color: $secondary-500;
+  }
+
+  &__field {
+    width: 100%;
+    padding: 11px 15px;
+    background: $terciary-500;
+    border: 1px solid $terciary-500;
+  }
+
+  &__field:focus {
+    outline: none;
+    border: 1px solid $quaternary-500;
+  }
+
+  &__field::placeholder {
+    color: $terciary-300;
+    font-family: $primary-font;
+    font-size: 14px;
+    line-height: 1.1em;
+  }
+}
