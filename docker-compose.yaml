@@ -5,33 +5,40 @@ services:
     build: ./web/.
     ports:
       - "3000:3000"
-    command: npm run start
-    depends_on:
-      - api
-      - db
-
-  api:
-    build: ./api/.
-    ports:
-      - "8080:8080"
     environment:
-      - DB_HOST=db
-      - DB_DATABASE=mysql
-      - DB_USER=docker
-      - DB_PASSWORD=docker
-    command: cd /home/matheusdoedev/repositories/indevo ; /usr/bin/env /home/matheusdoedev/.asdf/installs/java/openjdk-21/bin/java @/tmp/cp_3i5vjxbng169k772wok7475wj.argfile com.matheusdoedev.indevo.api.ApiApplication
+      - NEXT_PUBLIC_APP_URL=http://172.20.0.1:4200
+    command: yarn dev
     depends_on:
-      - db
+      - app
 
-  db:
-    image: "mysql:latest"
-    restart: always
-    environment:
-      - "MYSQL_DATABASE=mysql"
-      - "MYSQL_PASSWORD=docker"
-      - "MYSQL_ROOT_PASSWORD=docker"
-      - "MYSQL_USER=docker"
+  app:
+    build: ./app/.
     ports:
-      - "3306:3306"
-    volumes:
-      - ./db-dump/:/docker-entrypoint-initdb.d
+      - "4200:4200"
+    command: yarn start --host 0.0.0.0 --watch
+
+  # api:
+  #   build: ./api/.
+  #   ports:
+  #     - "8080:8080"
+  #   environment:
+  #     - DB_HOST=db
+  #     - DB_DATABASE=mysql
+  #     - DB_USER=docker
+  #     - DB_PASSWORD=docker
+  #   command: cd /home/matheusdoedev/repositories/indevo ; /usr/bin/env /home/matheusdoedev/.asdf/installs/java/openjdk-21/bin/java @/tmp/cp_3i5vjxbng169k772wok7475wj.argfile com.matheusdoedev.indevo.api.ApiApplication
+  #   depends_on:
+  #     - db
+
+  # db:
+  #   image: "mysql:latest"
+  #   restart: always
+  #   environment:
+  #     - "MYSQL_DATABASE=mysql"
+  #     - "MYSQL_PASSWORD=docker"
+  #     - "MYSQL_ROOT_PASSWORD=docker"
+  #     - "MYSQL_USER=docker"
+  #   ports:
+  #     - "3306:3306"
+  #   volumes:
+  #     - ./db-dump/:/docker-entrypoint-initdb.d
