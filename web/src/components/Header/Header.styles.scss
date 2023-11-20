@@ -1,11 +1,48 @@
-@import '../../styles/objects/container';
+@import '../../styles/index.scss';
 
-.header__wrapper {
-  padding: 24px 0;
+.header {
+  &__wrapper {
+    padding: $gap-sm 0;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: $gutter;
+
+    & > .button {
+      display: none;
+    }
+  }
+
+  &--scroll-animation {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100vw;
+    background: $quaternary-600;
+    animation: fade-down 0.3s forwards;
+    padding: $gutter 0;
+
+    & .button {
+      display: block;
+    }
+  }
 }
 
-.header__container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+@media (max-width: $lg) {
+  .header {
+    &__content {
+      & > .button {
+        display: none;
+      }
+    }
+  }
 }

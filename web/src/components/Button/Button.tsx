@@ -2,8 +2,18 @@ import { CommonComponent } from '@/interfaces'
 
 import './Button.styles.scss'
 
-interface ButtonProps extends CommonComponent {}
+interface ButtonProps extends CommonComponent {
+  onClick: (event: unknown) => void
+}
 
-export default function Button({ children, className = '' }: ButtonProps) {
-  return <button className={`button ${className}`}>{children}</button>
+export default function Button({
+  children,
+  className = '',
+  ...props
+}: Readonly<ButtonProps>) {
+  return (
+    <button className={`button ${className}`} {...props}>
+      {children}
+    </button>
+  )
 }
