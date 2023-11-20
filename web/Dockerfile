@@ -4,11 +4,7 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-COPY ./.env.production ./.env
-
-RUN npm install
-
-RUN npm run build
+RUN yarn
 
 EXPOSE 3000
-CMD [ "npm", "start" ]
+CMD [ "yarn", "dev" ]
