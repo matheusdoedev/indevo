@@ -1,0 +1,36 @@
+<app-auth-layout title="Create your account">
+  <form class="login__form">
+    <div class="login__two-inputs-row">
+      <app-text-field
+        label="First name"
+        name="firstName"
+        placeholder="Ex: John"
+      ></app-text-field>
+      <app-text-field
+        label="Last name"
+        name="lastName"
+        placeholder="Ex: Doe"
+      ></app-text-field>
+    </div>
+    <app-text-field
+      name="email"
+      label="Email"
+      placeholder="Ex: john.doe@gmail.com"
+    ></app-text-field>
+    <app-text-field
+      name="confirmEmail"
+      label="Confirm email"
+      placeholder="Ex: john.doe&#64;gmail.com"
+    ></app-text-field>
+    <app-text-field name="password" label="Password"></app-text-field>
+    <app-text-field
+      name="confirmPassword"
+      label="Confirm Password"
+    ></app-text-field>
+    <app-button>Sign Up</app-button>
+    <span class="login__separator-text">or</span>
+    <a class="login__create-account-link" routerLink="/"
+      >I already have my account</a
+    >
+  </form>
+</app-auth-layout>
