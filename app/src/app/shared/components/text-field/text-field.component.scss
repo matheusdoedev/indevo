@@ -1,6 +1,10 @@
 @import "../../styles/index.scss";
 
-.input {
+:host {
+  width: 100%;
+}
+
+.text-field {
   display: flex;
   flex-direction: column;
   row-gap: $gap;

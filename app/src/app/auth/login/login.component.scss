@@ -15,4 +15,21 @@
     text-decoration-line: underline;
     font-size: 14px;
   }
+
+  &__separator-text {
+    color: $secondary-600;
+    text-align: center;
+    font-family: $secondary-font;
+    font-size: 14px;
+    line-height: 1.1em;
+  }
+
+  &__create-account-link {
+    color: $secondary-500;
+    text-align: center;
+    font-family: $secondary-font;
+    font-size: 14px;
+    line-height: 1.1em;
+    text-decoration-line: underline;
+  }
 }

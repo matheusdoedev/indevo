@@ -1,0 +1,10 @@
+@import "../login/login.component.scss";
+
+.login {
+  &__two-inputs-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: $gutter;
+  }
+}

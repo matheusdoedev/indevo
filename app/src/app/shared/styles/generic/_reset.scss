@@ -63,8 +63,11 @@ p,
 input,
 label {
   font-size: 14px;
-  max-width: 30em;
   line-height: 1.4em;
+}
+
+p {
+  max-width: 30em;
 }
 
 label {
