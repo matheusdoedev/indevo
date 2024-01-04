@@ -44,7 +44,6 @@ public class SecurityConfig {
 				.authorizeHttpRequests(authorize -> authorize
 						.requestMatchers(HttpMethod.POST, "/api/v1/auth/login").permitAll()
 						.requestMatchers(HttpMethod.POST, "/api/v1/auth/register").permitAll()
-						.requestMatchers(HttpMethod.GET, "").permitAll()
 						.requestMatchers(AUTH_WHITELIST).permitAll()
 						.anyRequest().authenticated())
 				.addFilterBefore(this.securityFilter, UsernamePasswordAuthenticationFilter.class)
