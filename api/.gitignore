@@ -34,3 +34,4 @@ build/
 
 .tool-versions
 db-dump
+.env
