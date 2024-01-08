@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-text-field',
@@ -9,4 +10,6 @@ export class TextFieldComponent {
   @Input() name: string = '';
   @Input() label: string = '';
   @Input() placeholder: string = '';
+  @Input()
+  formGroup!: FormGroup;
 }

@@ -1,15 +1,20 @@
 <app-auth-layout title="Login with your account">
-  <form class="login__form">
+  <form class="login__form" (submit)="handleSubmitLoginForm()">
     <app-text-field
       name="email"
       label="E-mail"
       placeholder="Ex: john.doe@example.com"
+      [formGroup]="loginForm"
     ></app-text-field>
-    <app-text-field name="password" label="Password"></app-text-field>
+    <app-text-field
+      name="password"
+      label="Password"
+      [formGroup]="loginForm"
+    ></app-text-field>
     <a class="login__recover-password-link" routerLink="/recover-password"
       >Recover password</a
     >
-    <app-button>Enter</app-button>
+    <app-button type="submit">Enter</app-button>
     <span class="login__separator-text">or</span>
     <a class="login__create-account-link" routerLink="/create-account"
       >Create a new account</a

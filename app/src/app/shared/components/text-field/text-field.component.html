@@ -1,4 +1,4 @@
-<div class="text-field">
+<div class="text-field" [formGroup]="formGroup">
   <label *ngIf="label" [for]="name" class="text-field__label">{{
     label
   }}</label>
@@ -8,5 +8,6 @@
     [placeholder]="placeholder"
     [id]="name"
     [name]="name"
+    [formControlName]="name"
   />
 </div>
