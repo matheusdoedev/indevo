@@ -11,10 +11,26 @@ import { RecoverPasswordComponent } from './recover-password/recover-password.co
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { PasswordChangeConfirmationComponent } from './password-change-confirmation/password-change-confirmation.component';
 import { PasswordChangeEmailSendedComponent } from './password-change-email-sended/password-change-email-sended.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AuthComponent, LoginComponent, AuthLayoutComponent, CreateAccountComponent, RecoverPasswordComponent, ChangePasswordComponent, PasswordChangeConfirmationComponent, PasswordChangeEmailSendedComponent],
-  imports: [CommonModule, AuthRoutingModule, SharedModule],
+  declarations: [
+    AuthComponent,
+    LoginComponent,
+    AuthLayoutComponent,
+    CreateAccountComponent,
+    RecoverPasswordComponent,
+    ChangePasswordComponent,
+    PasswordChangeConfirmationComponent,
+    PasswordChangeEmailSendedComponent,
+  ],
+  imports: [
+    CommonModule,
+    AuthRoutingModule,
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   exports: [AuthRoutingModule],
 })
 export class AuthModule {}
