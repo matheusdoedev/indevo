@@ -16,26 +16,30 @@
 >
   <form class="create-new-plan-modal">
     <h2 class="create-new-plan-modal__title">Create a new PDI plan</h2>
-    <app-text-field
-      label="Title"
-      name="title"
-      [formGroup]="createNewPDIForm"
-    ></app-text-field>
-    <app-text-field
-      label="Description"
-      name="description"
-      [formGroup]="createNewPDIForm"
-    ></app-text-field>
+    <div class="create-new-plan-modal__fields">
+      <app-text-field
+        label="Title"
+        name="title"
+        [formGroup]="createNewPDIForm"
+      ></app-text-field>
+      <app-text-field
+        label="Description"
+        name="description"
+        [formGroup]="createNewPDIForm"
+      ></app-text-field>
+    </div>
 
     <hr class="create-new-plan-modal__separator" />
 
-    <h3>Add goals to your plan</h3>
-    <p>
+    <h3 class="create-new-plan-modal__add-goals-title">
+      Add goals to your plan
+    </h3>
+    <p class="create-new-plan-modal__add-goals-text">
       There is no goals in this plan yet! Add your first goal by click in the
       button below.
     </p>
-    <button>+ Add a goal</button>
-    <div>
+    <button class="create-new-plan-modal__add-goal-button">+ Add a goal</button>
+    <div class="create-new-plan-modal__footer-buttons">
       <app-button>Cancel</app-button>
       <app-button type="submit">Save</app-button>
     </div>
