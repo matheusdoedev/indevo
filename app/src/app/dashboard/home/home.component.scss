@@ -17,7 +17,8 @@
   }
 }
 
-.create-new-plan-modal {
+.create-new-plan-modal,
+.add-new-goal-modal {
   display: flex;
   flex-direction: column;
 
@@ -70,5 +71,20 @@
     justify-content: flex-end;
     gap: 24px;
     margin-top: 64px;
+  }
+
+  &__cancel-button {
+    color: $secondary-500;
+    text-align: center;
+    font-family: $primary-font;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.1em;
+    transition: 0.3s;
+
+    &:hover {
+      color: $primary-500;
+      transition: 0.3s;
+    }
   }
 }

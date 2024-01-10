@@ -12,7 +12,7 @@
 
 <app-modal
   [modalIsVisible]="createNewPDIModalIsVisible"
-  (onClose)="createNewPDIModalIsVisible = false"
+  (onClose)="handleCloseNewPDIModal()"
 >
   <form class="create-new-plan-modal">
     <h2 class="create-new-plan-modal__title">Create a new PDI plan</h2>
@@ -38,9 +38,72 @@
       There is no goals in this plan yet! Add your first goal by click in the
       button below.
     </p>
-    <button class="create-new-plan-modal__add-goal-button">+ Add a goal</button>
+    <button
+      class="create-new-plan-modal__add-goal-button"
+      (click)="handleOpenAddGoalModal()"
+    >
+      + Add a goal
+    </button>
     <div class="create-new-plan-modal__footer-buttons">
-      <app-button>Cancel</app-button>
+      <button
+        (click)="handleCloseNewPDIModal()"
+        class="create-new-plan-modal__cancel-button"
+      >
+        Cancel
+      </button>
+      <app-button type="submit">Save</app-button>
+    </div>
+  </form>
+</app-modal>
+
+<app-modal [modalIsVisible]="addGoalModalIsVisible">
+  <form class="add-new-goal-modal" (submit)="handleSaveGoal()">
+    <h2 class="add-new-goal-modal__title">Add a new goal</h2>
+    <div class="add-new-goal-modal__fields">
+      <app-text-field
+        label="Title"
+        name="title"
+        [formGroup]="addGoalForm"
+      ></app-text-field>
+      <app-text-field
+        label="Description"
+        name="description"
+        [formGroup]="addGoalForm"
+      ></app-text-field>
+      <app-text-field
+        label="Thumb image"
+        name="thumbUrl"
+        [formGroup]="addGoalForm"
+      ></app-text-field>
+      <app-text-field
+        label="Thumb image"
+        name="thumbUrl"
+        [formGroup]="addGoalForm"
+      ></app-text-field>
+      <app-text-field
+        label="Goal type"
+        name="goalType"
+        [formGroup]="addGoalForm"
+      ></app-text-field>
+      <app-text-field
+        label="Unit of measurement"
+        name="goalType"
+        [formGroup]="addGoalForm"
+      ></app-text-field>
+      <app-text-field
+        label="Target"
+        name="target"
+        [formGroup]="addGoalForm"
+      ></app-text-field>
+    </div>
+
+    <div class="add-new-goal-modal__footer-buttons">
+      <button
+        (click)="handleCloseAddNewGoalModal()"
+        class="add-new-goal-modal__cancel-button"
+      >
+        Cancel
+      </button>
       <app-button type="submit">Save</app-button>
     </div>
   </form>
