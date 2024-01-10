@@ -18,7 +18,6 @@ export class LoginComponent {
   }
 
   handleSubmitLoginForm() {
-    console.log(this.loginForm.value);
     this.router.navigateByUrl('/dashboard');
   }
 }
