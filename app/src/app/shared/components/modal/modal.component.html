@@ -1,0 +1,7 @@
+<ng-container *ngIf="modalIsVisible">
+  <div class="modal__overlay" (click)="handleClose()"></div>
+
+  <div class="modal__wrapper">
+    <ng-content></ng-content>
+  </div>
+</ng-container>
