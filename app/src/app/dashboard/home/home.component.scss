@@ -1,0 +1,36 @@
+@import "../../shared/styles/index.scss";
+
+.dashboard-home {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 104px;
+    row-gap: 24px;
+  }
+
+  &__text-without-pdis {
+    color: $secondary-500;
+    text-align: center;
+    font-size: 18px;
+    line-height: 25.2px;
+  }
+}
+
+.create-new-plan-modal {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+
+  &__title {
+    margin-bottom: 8px;
+
+    color: $secondary-500;
+    font-size: 24px;
+  }
+
+  &__separator {
+    border: 0.5px solid $terciary-300;
+    opacity: 0.2;
+  }
+}

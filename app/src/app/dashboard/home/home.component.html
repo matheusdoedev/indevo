@@ -1,1 +1,43 @@
-<p>home works!</p>
+<app-dashboard-layout>
+  <div class="dashboard-home__wrapper">
+    <p class="dashboard-home__text-without-pdis">
+      There is no PDI plan created. Create your first pan by clicking the button
+      below.
+    </p>
+    <app-button (onClick)="handleOpenNewPDIModal()"
+      >+ Create a new plan</app-button
+    >
+  </div>
+</app-dashboard-layout>
+
+<app-modal
+  [modalIsVisible]="createNewPDIModalIsVisible"
+  (onClose)="createNewPDIModalIsVisible = false"
+>
+  <form class="create-new-plan-modal">
+    <h2 class="create-new-plan-modal__title">Create a new PDI plan</h2>
+    <app-text-field
+      label="Title"
+      name="title"
+      [formGroup]="createNewPDIForm"
+    ></app-text-field>
+    <app-text-field
+      label="Description"
+      name="description"
+      [formGroup]="createNewPDIForm"
+    ></app-text-field>
+
+    <hr class="create-new-plan-modal__separator" />
+
+    <h3>Add goals to your plan</h3>
+    <p>
+      There is no goals in this plan yet! Add your first goal by click in the
+      button below.
+    </p>
+    <button>+ Add a goal</button>
+    <div>
+      <app-button>Cancel</app-button>
+      <app-button type="submit">Save</app-button>
+    </div>
+  </form>
+</app-modal>
