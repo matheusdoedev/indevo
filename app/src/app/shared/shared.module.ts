@@ -1,13 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { ButtonComponent, TextFieldComponent } from './components';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-const components = [ButtonComponent, TextFieldComponent];
+import {
+  ButtonComponent,
+  LogoComponent,
+  ModalComponent,
+  TextFieldComponent,
+} from './components';
+import { ImageFieldComponent } from './components/image-field/image-field.component';
+
+const components = [
+  ButtonComponent,
+  LogoComponent,
+  ModalComponent,
+  TextFieldComponent,
+];
 
 @NgModule({
-  declarations: [...components],
+  declarations: [...components, ButtonComponent, ModalComponent, ImageFieldComponent],
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
   exports: [...components],
 })
