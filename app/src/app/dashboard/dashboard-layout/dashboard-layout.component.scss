@@ -1,0 +1,13 @@
+@import "../../shared/styles/index.scss";
+
+.dashboard-layout {
+  &__wrapper {
+    background: $terciary-500;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  &__header {
+    padding: 24px 0;
+  }
+}
