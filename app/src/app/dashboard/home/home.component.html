@@ -70,16 +70,11 @@
         name="description"
         [formGroup]="addGoalForm"
       ></app-text-field>
-      <app-text-field
+      <app-image-field
         label="Thumb image"
         name="thumbUrl"
-        [formGroup]="addGoalForm"
-      ></app-text-field>
-      <app-text-field
-        label="Thumb image"
-        name="thumbUrl"
-        [formGroup]="addGoalForm"
-      ></app-text-field>
+        (onChange)="handleChangeGoalThumb($event)"
+      ></app-image-field>
       <app-text-field
         label="Goal type"
         name="goalType"

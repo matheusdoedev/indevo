@@ -13,7 +13,9 @@ export class LogoComponent {
   logoImgSrc: string = '../../../assets/icons/indevo.svg';
 
   ngOnInit() {
-    this.logo.nativeElement.style.width = this.width.toString();
-    this.logo.nativeElement.style.height = this.height.toString();
+    if (this.logo) {
+      this.logo.nativeElement.style.width = this.width.toString();
+      this.logo.nativeElement.style.height = this.height.toString();
+    }
   }
 }

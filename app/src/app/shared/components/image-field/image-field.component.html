@@ -1,1 +1,14 @@
-<p>image-field works!</p>
+<div class="text-field">
+  <label *ngIf="label" [for]="name" class="text-field__label">{{
+    label
+  }}</label>
+  <input
+    type="file"
+    accept="image/png, image/jpeg"
+    class="text-field__field"
+    [placeholder]="placeholder"
+    [id]="name"
+    [name]="name"
+    (change)="handleChangeImage($event)"
+  />
+</div>

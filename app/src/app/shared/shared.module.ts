@@ -4,21 +4,23 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {
   ButtonComponent,
+  ImageFieldComponent,
   LogoComponent,
   ModalComponent,
   TextFieldComponent,
 } from './components';
-import { ImageFieldComponent } from './components/image-field/image-field.component';
+import { SelectComponent } from './components/select/select.component';
 
 const components = [
   ButtonComponent,
+  ImageFieldComponent,
   LogoComponent,
   ModalComponent,
   TextFieldComponent,
 ];
 
 @NgModule({
-  declarations: [...components, ButtonComponent, ModalComponent, ImageFieldComponent],
+  declarations: [...components, SelectComponent],
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
   exports: [...components],
 })
