@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AuthComponent } from './auth.component';
 import { LoginComponent } from './login/login.component';
@@ -11,7 +13,6 @@ import { RecoverPasswordComponent } from './recover-password/recover-password.co
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { PasswordChangeConfirmationComponent } from './password-change-confirmation/password-change-confirmation.component';
 import { PasswordChangeEmailSendedComponent } from './password-change-email-sended/password-change-email-sended.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   exports: [AuthRoutingModule],
 })
