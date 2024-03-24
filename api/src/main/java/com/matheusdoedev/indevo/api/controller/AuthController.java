@@ -26,6 +26,7 @@ import lombok.AllArgsConstructor;
 @RequestMapping("/api/v1/auth")
 @AllArgsConstructor
 @Tag(name = "authentication")
+@CrossOrigin
 public class AuthController {
 
 	private final AuthenticationManager authenticationManager;
